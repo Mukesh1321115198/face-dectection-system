@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Face Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <h1>Live Face Detection</h1>
+  <button onclick="startCamera()">Start Camera</button>
+  <button onclick="stopCamera()">Stop Camera</button>
+
+  <div>
+    <img id="video-stream" src="{{ url_for('video_feed') }}" style="display: none; width: 640px; height: 480px;">
+  </div>
+
+  <script>
+    function startCamera() {
+      document.getElementById('video-stream').style.display = 'block';
+    }
+
+    function stopCamera() {
+      document.getElementById('video-stream').style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>
